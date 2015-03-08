@@ -1,0 +1,412 @@
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="styles/font-awesome/css/font-awesome.min.css">
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="scripts/gasco_plugin.js"></script>
+
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="../user_files/font-awesome/css/font-awesome.min.css">
+<script type="text/javascript" src="../user_files/gasco_plugin/scripts/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="../user_files/gasco_plugin/scripts/gasco_plugin.js"></script>
+
+<style>
+
+body {
+	background-color:#124a68;
+	margin:0;
+}
+
+.cell {
+	width:124px;
+	height: 124px;
+	background-color: #009CCC;   
+	border:8px solid #124a68;
+
+}
+
+.small_m {
+	font-size:28px;
+}
+
+.big_m {
+	font-size:28px;
+}
+
+.small_t {
+	font-size:13px;
+}
+
+.big_t {
+	font-size:13px;
+}
+
+.tile {
+	width: 100%;
+	height: 100%;
+}
+
+.tile_title {
+	font-family:'Open Sans', Helvetica, Arial;
+	font-weight: 300;
+	color:#FFFFFF;
+	vertical-align: bottom;
+	text-align: left;
+	height: 25%;
+	padding-bottom: 10px;
+	padding-left: 10px;
+}
+
+.tile_metric {
+	font-family:'Open Sans', Helvetica, Arial;
+	font-weight: 300;
+	color:#FFFFFF;
+	vertical-align: middle;
+	text-align: right;
+	height: 75%;
+	padding-top: 10px;
+	padding-right: 10px;	
+}
+
+.tile_icon{
+	font-size:4em;
+	color:#FFFFFF;
+	margin:auto;
+	display: block;
+	height: 70%;
+	width: 50%;
+	padding-top: 15px;
+	text-align: center;
+}
+
+caption {
+	font-family:'Open Sans', Helvetica, Arial;
+	font-weight: 300;
+	font-size:24px;
+	color:#FFFFFF;
+	text-align: left;
+	padding-left: 4px;
+	padding-top:20px;
+	padding-bottom:20px;
+}
+
+.main_header {
+	font-family:'Open Sans', Helvetica, Arial;
+	font-weight: 300;
+	font-size:30px;
+	color:#FFFFFF;
+	text-align: left;
+	padding-left: 4px;
+	line-height: 100px;
+}
+
+</style>
+
+
+</head>
+<body>
+
+<script>
+function bring_back_obiee() {
+	console.log('bringing back obiee interface...');
+	$('.HeaderContainer').css('display','block');
+	$('.ComponentHeader').css('display','block');
+	var c = document.getElementsByClassName('obiee_landing_page')[0];
+	c.appendChild(document.getElementById('landing_page'));
+	$('body').addClass('HTMLBody');
+	
+	document.getElementById('obiee_switch_off').style.display = '';
+	document.getElementById('obiee_switch_on').style.display = 'none';
+}
+
+function destroy_obiee() {
+	console.log('getting rid of obiee interface...');
+	$('.HeaderContainer').css('display','none');
+	$('.ComponentHeader').css('display','none');
+	var d = document.getElementById('landing_page');
+	d.style.display = 'block';
+	$('body').css('background-color','#124a68 !important');
+	$('body').append(d);
+	$('body').removeClass('HTMLBody');
+	document.getElementById('obiee_switch_off').style.display = 'none';
+	document.getElementById('obiee_switch_on').style.display = '';
+}
+
+</script>
+
+<div id="landing_page" style="width:100%;height:100%;">
+<div style="width:100%;height:100px;background-color:rgb(28,121,170)">
+	<div style="margin:auto; width:90%" class="main_header"> Welcome John Doe <i id="obiee_switch_off" class="fa fa-expand" style="text-align:right" onClick = "destroy_obiee()"></i>
+	<i id="obiee_switch_on" class="fa fa-compress" style="text-align:right;display:none" onClick = "bring_back_obiee()"></i></div>
+
+</div>
+
+<div style="margin:auto; width:90%">
+<table style="margin:0 auto;border:4px solid #124a68;border-collapse:collapse;float:left;margin-right:40px">
+<caption> ITS Summary </caption>
+<tr>
+	<td class="cell" id="c1_1"></td>
+	<td class="cell" id="c1_2"></td>
+	<td class="cell" id="c1_3"></td>
+	<td class="cell" id="c1_4"></td>
+</tr>
+<tr>
+	<td class="cell" id="c2_1"></td>
+	<td class="cell" id="c2_2"></td>
+	<td class="cell" id="c2_3"></td>
+	<td class="cell" id="c2_4"></td>
+</tr>
+<tr>
+	<td class="cell" id="c3_1"></td>
+	<td class="cell" id="c3_2"></td>
+	<td class="cell" id="c3_3"></td>
+	<td class="cell" id="c3_4"></td>
+</tr>
+<tr>
+	<td class="cell" id="c4_1"></td>
+	<td class="cell" id="c4_2"></td>
+	<td class="cell" id="c4_3"></td>
+	<td class="cell" id="c4_4"></td>
+</tr>
+
+
+</table>
+
+<table style="margin:auto;border:4px solid #FFFFFF00;border-collapse:collapse;float:left;margin-right:40px">
+<caption> ITS Admin </caption>
+<tr>
+	<td class="cell" id="d1_1"></td>
+	<td class="cell" id="d1_2"></td>
+</tr>
+<tr>
+	<td class="cell" id="d2_1"></td>
+	<td class="cell" id="d2_2"></td>
+</tr>
+<tr>
+	<td class="cell" id="d3_1"></td>
+	<td class="cell" id="d3_2"></td>
+</tr>
+<tr>
+	<td class="cell" id="d4_1"></td>
+	<td class="cell" id="d4_2"></td>
+</tr>
+</table>
+
+<table style="margin:auto;border:4px solid #FFFFFF00;border-collapse:collapse;float:left">
+<caption> Operations </caption>
+<tr>
+	<td class="cell" id="e1_1"></td>
+</tr>
+<tr>
+	<td class="cell" id="e2_1"></td>
+</tr>
+<tr>
+	<td class="cell" id="e3_1"></td>
+</tr>
+<tr>
+	<td class="cell" id="e4_1"></td>
+</tr>
+</table>
+
+</div>
+</div>
+
+<div id="tile1" class="tile">
+<div class="tile_metric small_m">45K</div>
+<div class="tile_title  small_t">Orders Commit.</div>
+</div>
+
+
+<div id="tile2" class="tile">
+<div class="tile_metric small_m" style="position:relative">
+<div id="graph2" style="padding-left:25px;position:absolute;float:left;top:5px"></div>
+<div id="graph3" style="padding-left:25px;position:absolute;float:left;top:5px;left:125px"></div></div>
+<div class="tile_title small_t">Emiratization</div>
+</div>
+
+
+<div id="tile3" class="tile">
+<div class="tile_metric big_m">35%
+<div id="graph1" style="padding-left:35px;"></div></div>
+<div class="tile_title big_t">Last sixt Months Emiratization Trend</div>
+</div>
+
+<div id="tile4" class="tile">
+<div class="tile_icon"><i class="fa fa-clock-o"></i></div>
+<div class="tile_title small_t">>7 days attendance violations</div>
+</div>
+
+<div id="tile5" class="tile">
+<div class="tile_metric small_m">95%</div>
+<div class="tile_title small_t">OPEX Compliance</div>
+</div>
+
+<div id="tile6" class="tile">
+<div class="tile_metric small_m">32K</div>
+<div class="tile_title small_t">Tons of C3+</div>
+</div>
+
+<div id="tile7" class="tile">
+<div class="tile_metric small_m">151</div>
+<div class="tile_title small_t">IT Total Manpower</div>
+</div>
+
+<div id="tile8" class="tile">
+<div class="tile_metric small_m">4</div>
+<div class="tile_title small_t">Open ESCR</div>
+</div>
+
+<div id="tile9" class="tile">
+<div class="tile_metric small_m">3</div>
+<div class="tile_title small_t">High Flyers</div>
+</div>
+
+<div id="tile10" class="tile">
+<div class="tile_metric small_m">3.2M</div>
+<div class="tile_title small_t">Total Budget</div>
+</div>
+
+<div id="tile11" class="tile">
+<div class="tile_metric small_m">1.1M</div>
+<div class="tile_title small_t">Remaining Budget</div>
+</div>
+
+<div id="tile12" class="tile">
+<div class="tile_icon">
+<i class="fa fa-bar-chart"></i></div>
+<div class="tile_title small_t">Icon tile</div>
+</div>
+
+<script>
+
+  var c = ['#1C79AA', '#008299', '#5133AB', '#6D8A24', '#2672EC', '#6A145C', '#C44730', '#BD254D', '#094AB2', '#4C73A2', '#CE8A16', '#323232', '#414141', '#656565', '#00639C', '#E3E3E3'];
+
+  var c2 = ['#45A6D0', '#05AABC', '#5D37B9', '#87B12C', '#318CE9', '#7B247F', '#DD5137', '#CC3660', '#0C5CC4', '#6398BF', '#DE9518', '#373737', '#454545', '#828282', '#007AB3', '#FCFCFC'];
+
+ function merge_cells(p,x,y,tiles_wide, tiles_height) {
+
+ 	var t_id = p+x+'_'+y;
+
+ 	var t = document.getElementById(t_id);
+ 	t.rowSpan = tiles_height;
+ 	t.colSpan = tiles_wide;
+
+ 	for (i=y+1;i<tiles_wide+y;i++) {
+ 		console.log('remove: '+p+x+'_'+i);
+ 		document.getElementById(p+x+'_'+i).remove();
+ 	};
+
+ 	for (i=x+1;i<tiles_height+x;i++) {
+ 		console.log('remove: '+p+i+'_'+y);
+ 		document.getElementById(p+i+'_'+y).remove();
+ 	}
+
+ 	for (i=y+1;i<tiles_wide+y;i++) {
+ 		for (j=x+1;j<tiles_height+x;j++) {
+ 		console.log('remove: '+p+j+'_'+i);
+ 		document.getElementById(p+j+'_'+i).remove();
+ 		}
+ 	}
+ };
+
+function fill_cell (t,c) {
+	document.getElementById(c).appendChild(document.getElementById(t));
+};
+
+function remove_cell(c) {
+  document.getElementById(c).remove();
+}
+
+function color_cells() {
+	var cells = document.getElementsByClassName('cell');
+	for (i=0;i<cells.length;i++) {
+		var r = Math.floor((Math.random() * 10) + 1);
+		cells[i].style.backgroundImage = 'linear-gradient(to right, '+c[r]+','+c2[r]+')';
+	}
+
+
+
+}
+
+merge_cells('c',1,1,2,2);
+merge_cells('c',3,3,2,1);
+merge_cells('c',4,1,2,1);
+merge_cells('d',2,1,2,1);
+
+color_cells();
+
+fill_cell('tile1','c1_3');
+fill_cell('tile2','c3_3');
+fill_cell('tile3','c1_1');
+fill_cell('tile4','c4_1');
+fill_cell('tile5','c1_4');
+fill_cell('tile6','c2_3');
+fill_cell('tile7','c2_4');
+fill_cell('tile8','c3_1');
+fill_cell('tile9','c3_2');
+fill_cell('tile10','c4_3');
+fill_cell('tile11','c4_4');
+fill_cell('tile12','d1_1');
+
+remove_cell('d4_2');
+
+	var v = [];
+	for (var i=0;i<7;i++) {
+		v[i] = {value: Math.floor((Math.random() * 25) + 1), maxValue:25};
+	}
+
+	$('#graph1').cp_vertical_bar_chart({design:{fillColor:'#E4E4E4',remainingColor: '#FFFFFF00',paddingRight:'12px'},data:{values:v},size:  {barWidth:'20',barHeight:'100'}});
+
+	$('#graph2').cp_donut({design: {
+								fillColor:'#EBEBEB',
+				                remainingColor:'rgba(255,255,255,0.5)',                
+				                unit: '%',
+				                scoreFontSize: '24',
+				                scoreFontFamily: 'Helvetica',
+				                scoreFontColor: '#EBEBEB',
+				                titleFontSize: '10',
+				                titleFontFamily: 'Helvetica',
+				                titleFontColor: '#EBEBEB',
+				                gap: '3',
+				                displayText:'true'
+							},
+							size:{
+								height:'100',
+								width:'100',
+								radius:'35',
+								lineWidth:'12'
+							},
+							data:{
+								canvas_id:'c1',
+								score:35,
+								max:100,
+								subtitle:'IT'}
+							});
+
+	$('#graph3').cp_donut({design: {
+								fillColor:'#EBEBEB',
+				                remainingColor:'rgba(255,255,255,0.5)',                
+				                unit: '%',
+				                scoreFontSize: '24',
+				                scoreFontFamily: 'Helvetica',
+				                scoreFontColor: '#EBEBEB',
+				                titleFontSize: '10',
+				                titleFontFamily: 'Helvetica',
+				                titleFontColor: '#EBEBEB',
+				                gap: '3',
+				                displayText:'true'
+							},
+							size:{
+								height:'100',
+								width:'100',
+								radius:'35',
+								lineWidth:'12'
+							},
+							data:{
+								canvas_id:'c2',
+								score:45,
+								max:100,
+								subtitle:'GASCO'}
+							});	
+
+
+
+</script>

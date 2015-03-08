@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="myCanvas" width="578" height="200"></canvas>
+    <script>
+      var canvas = document.getElementById('myCanvas');
+      var context = canvas.getContext('2d');
+     
+      var score = 30; //score is a value from 0 to 100
+
+
+      var centerX = canvas.width / 2;
+      var centerY = canvas.height / 2;
+      var radius = 50;
+       
+      context.beginPath();
+      context.arc(centerX, centerY, radius, 0, 2*Math.PI, false);            
+      context.fillStyle = '#85b839';
+      context.fill();
+
+      var o = radius-((radius*2 - (radius*2)*(score/100)));      
+      var alpha = Math.asin(o/radius);
+      
+      context.beginPath();
+      context.arc(centerX, centerY, radius, 0-alpha, (1 * Math.PI)+alpha, true);            
+      context.fillStyle = 'rgba(255,255,255,0.5)';
+      context.fill();
+      context.fillStyle = '#729e31';
+      context.font="30px Helvetica";
+      context.fillText(score+'%',centerX-25 ,centerY+10);
+
+
+
+    </script>
+  </body>
+</html>      

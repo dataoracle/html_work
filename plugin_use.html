@@ -1,0 +1,255 @@
+<html>
+<head><title>Plugin test </title>
+
+<style>
+
+.show_cell {
+	width: 200px;
+	height: 200px;
+}
+</style>
+
+
+</head>
+
+
+
+<body>
+
+<table>
+<tr>
+<td><div class="show_cell" id="anchor_1"></div></td>
+<td><div class="show_cell" id="anchor_2"></div></td>
+<td><div class="show_cell" id="anchor_3"></div></td>
+</tr>
+
+<tr>
+<td><div class="show_cell" id="anchor_4"></div></td>
+<td><div class="show_cell" id="anchor_5"></div></td>
+<td><div class="show_cell" id="anchor_6"></div></td>
+</tr>
+
+<tr>
+<td><div class="show_cell" id="anchor_7"></div></td>
+<td><div class="show_cell" id="anchor_8"></div></td>
+<td><div class="show_cell" id="anchor_9"></div></td>
+</tr>
+
+<tr>
+<td><div class="show_cell" id="anchor_10"></div></td>
+<td><div class="show_cell" id="anchor_11"></div></td>
+<td><div class="show_cell" id="anchor_12"></div></td>
+</tr>
+
+</table>
+
+
+
+
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="scripts/gasco_plugin.js"></script>
+
+<link rel="stylesheet" type="text/css" href="styles/my_css.css">
+
+<script>
+
+$(document).ready(function () {
+	/*
+	$('#anchor_1').helloWorld({
+		values: ['foo','bar'],
+		color: '#009CCC',
+		fontSize: '20px'
+	});
+	*/
+	$('#anchor_1').cp_circle({
+		data:{
+		value:42,
+		subtitle:'is the answer!'
+		},
+		size:{
+			width:'130px',
+			height:'130px',
+			radius:'55',
+			borderRadius:'50'
+		}
+	});
+
+	$('#anchor_2').cp_circle({
+		data:{
+		value:'45%',
+		subtitle:null
+		},
+		size:{
+			width:'130px',
+			height:'130px',
+			radius:'55',
+			borderRadius:'50'
+		},
+		design: { 
+			backgroundColor:'#FF0000',
+			fontSize:'40',
+			fontFamily: 'Segoe UI',
+			fontColor:'#FFFFFF',
+			subtitleFontSize:'11'
+		}
+	});
+
+	$('#anchor_3').cp_circle({
+		data:{
+		value:'1.134',
+		subtitle:'Euro:Dollar rate'
+		},
+		size:{
+			width:'130px',
+			height:'130px',
+			radius:'55',
+			borderRadius:'10'
+		},
+		design: { 
+			backgroundColor:'#00FF00',
+			fontSize:'32',
+			fontFamily: 'Segoe UI',
+			fontColor:'#FFFFFF',
+			subtitleFontSize:'11' 
+		}
+	});
+
+	/* VERTICAL BAR */
+
+	$('#anchor_4').cp_vertical_bar({size:{barHeight:'200',barWidth:'25'}});
+
+	var v = [];
+	for (var i=0;i<12;i++) {
+		v[i] = {value: Math.floor((Math.random() * 25) + 1), maxValue:25};
+	}
+	
+	$('#anchor_5').cp_vertical_bar_chart({data:{values:v}});
+
+	$('#anchor_6').cp_vertical_bar_chart({design:{fillColor:'#E4E4E4',remainingColor: '#FFFFFF00',paddingRight:'12px'},data:{values:v},size:{barWidth:'20',barHeight:'100'}});
+	
+	/* DONUT CHARTS */
+	
+	$('#anchor_7').cp_donut({data:{
+								canvas_id:'c1',
+								score:60,
+								max:100,
+								subtitle:'out of 70'}
+							});
+
+	$('#anchor_8').cp_donut({design: {
+								fillColor:'#8CBF26',
+				                remainingColor:'#EBEBEB',                
+				                unit: 'K',
+				                scoreFontSize: '42',
+				                scoreFontFamily: 'Helvetica',
+				                scoreFontColor: '#8CBF26',
+				                titleFontSize: '14',
+				                titleFontFamily: 'Helvetica',
+				                titleFontColor: '#8CBF26',
+				                gap: '3',
+				                displayText:'true'
+							},
+							size:{
+								height:'150',
+								width:'150',
+								radius:'65',
+								lineWidth:'15'
+							},
+							data:{
+								canvas_id:'c2',
+								score:42,
+								max:50,
+								subtitle:'out of 50K'}
+							});
+
+});
+
+	$('#anchor_9').cp_tile({data:{content_id:'first_tile',title:'Hello world!',subtitle:'Im a tile!'}});
+
+	$('#first_tile').cp_circle({
+		data:{
+		value:42,
+		subtitle:'is the answer!'
+		},
+		size:{
+			width:'100px',
+			height:'100px',
+			radius:'45',
+			borderRadius:'50'
+		}
+	});
+
+	$('#first_tile div:first').center('85%');
+
+	$('#anchor_10').cp_tile({data:{content_id:'second_tile',title:'Hello world!',subtitle:'Im a tile!'}});
+
+	var v = [];
+	for (var i=0;i<6;i++) {
+		v[i] = {value: Math.floor((Math.random() * 25) + 1), maxValue:25};
+	}
+
+	$('#second_tile').cp_vertical_bar_chart({data:{values:v}});
+	$('#second_tile div:first').center('50%');
+
+	$('#anchor_11').cp_tile({data:{
+									content_id:'third_tile',
+								   	title:'Tile awesomeness',
+								   	subtitle:'not bad ...'},
+							  size:{
+							  		width: '180',
+					                height: '180',
+					                titleHeightPer: '15',
+					                contentHeightPer: '70',
+					                subtitleHeightPer:'15'
+							  },
+							  design: {
+					                backgroundColor:'#eefbff',
+					                titleFontSize: '20',
+					                titleFontFamily: 'Helvetica',
+					                titleFontColor: '#666666',
+					                titlePaddingTop: '5px',                
+					                subtitleFontSize: '12',
+					                subtitleFontFamily: 'Helvetica',
+					                subtitleFontColor: '#666666',
+					                borderStyle: '2px solid #007599',
+					            }	   
+							});
+
+	$('#third_tile').cp_donut({size:{
+								height:'115',
+								width:'135',
+								radius:'50',
+								lineWidth:'15'
+							}});
+	$('#third_tile canvas:first').center();
+
+	$('#anchor_12').cp_bubble({design: {
+				                fillColor:'#009CCC',               
+				                unit: '%',
+				                scoreFontSize: '22',
+				                scoreFontFamily: 'Helvetica',
+				                scoreFontColor: '#E4E4E4',
+				                titleFontSize: '16',
+				                titleFontFamily: 'Helvetica',
+				                titleFontColor: '#000000',
+				                titlePosition: 'bottom',
+				                gap: '20',
+				                displayText: 'true'
+				            },
+				            size: {
+				                radius: '50',
+				                width: '135',
+				                height: '140',
+				                lineWidth: '0'
+				            },
+				            data: {
+				                canvas_id:'c_bubble_1',
+				                score: '65',
+				                max:'100',                
+				                subtitle: 'Some Description'
+				            }});
+
+</script>
+
+</body>
+</html>

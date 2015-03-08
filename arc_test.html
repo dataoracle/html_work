@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="myCanvas" width="578" height="200"></canvas>
+    <script>
+      var canvas = document.getElementById('myCanvas');
+      var context = canvas.getContext('2d');
+      var context2 = canvas.getContext('2d');
+      var context3 = canvas.getContext('2d');
+
+      var img=document.getElementById("employee");
+      
+      var score = 90; //score is a value from 0 to 100
+
+
+      var centerX = canvas.width / 2;
+      var centerY = canvas.height / 2;
+      var radius = 50;
+       
+      
+      context2.beginPath();
+      context2.arc(centerX, centerY, radius, 1.5 * Math.PI, ((100*2*Math.PI)/100)+(1.5*Math.PI), false);
+      
+      context2.lineWidth = 15;
+      context2.strokeStyle = '#EEEEEE';
+      context2.stroke();
+      
+      
+      
+      context.beginPath();
+      context.arc(centerX, centerY, radius, 1.5 * Math.PI, ((score*2*Math.PI)/100)+(1.5*Math.PI), false);
+      
+      context.lineWidth = 15;
+      context.strokeStyle = '#A1A4DA';
+      context.stroke();
+      context.font="30px Helvetica";
+      context.fillText(score+'%',centerX-25	,centerY+10);
+
+
+    </script>
+  </body>
+</html>      

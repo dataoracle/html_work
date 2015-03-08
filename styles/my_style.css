@@ -1,0 +1,43 @@
+/* chapter 1 */
+/*
+#clickMe {
+ background: #D8B36E;
+ padding: 20px;
+ text-align: center;
+ width: 205px;
+ display: block;
+ border: 2px solid #000;
+}
+#picframe {
+ background: #D8B36E;
+ padding: 20px;
+ width: 205px;
+ display: none;
+ border: 2px solid #000;
+}
+*/
+
+/*Chapter 2 */
+
+div{
+float:left;
+height:245px;
+text-align:left;
+border: solid #000 3px;
+}
+#header{
+width:100%;
+border: 0px;
+height:50px;
+}
+#main{
+background-color: grey;
+height: 500px;
+}
+
+.nav {
+	float:left;
+	height:245px;
+	text-align:left;
+	border: solid #000 3px;
+}

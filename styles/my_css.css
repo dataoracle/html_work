@@ -1,0 +1,32 @@
+<style>
+
+/*Classes for rounder */
+
+.cp_rounder {
+	margin:auto;
+	border-radius:50%;
+	border-width:0px;
+	border-color:'#009CCC';
+	background-color:'#009CCC';
+	position:relative;
+}
+ 
+.cp_rounder_metric {
+	font-family:'Segoe UI',Arial;
+	position: absolute;
+    top: 50%;    
+    left: 0;
+    right: 0;
+}
+
+.cp_rounder_subtitle {
+	font-family:'Segoe UI',Arial;
+	position: absolute;
+    top: 50%;    
+    left: 0;
+    right: 0;
+    padding-top:10px;
+}
+
+
+</style>
